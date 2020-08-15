@@ -1,0 +1,18 @@
+{
+    "name": "luketowers/oc-tinypng-plugin",
+    "type": "october-plugin",
+    "description": "Automatically optimize resized images in October CMS with TinyPNG",
+    "homepage": "https://github.com/LukeTowers/oc-tinypng-plugin",
+    "keywords": ["october", "octobercms", "laravel", "tinypng", "tinyjpg", "image optimization"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Towers",
+            "email": "octobercms@luketowers.ca"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "tinify/tinify": "^1.5"
+    }
+}
