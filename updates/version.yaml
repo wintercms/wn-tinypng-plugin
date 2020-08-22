@@ -1,1 +1,2 @@
 1.0.1: First version of TinyPNG
+1.0.2: Log errors silently instead of breaking the resizing process when an API error occurs with TinyPNG

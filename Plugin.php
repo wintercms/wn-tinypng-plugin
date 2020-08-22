@@ -40,8 +40,13 @@ class Plugin extends PluginBase
 
             // Process as late in the filter collection as possible to optimize the finished product
             Event::listen('system.resizer.afterResize', function ($resizer, $tempPath) {
-                $source = Source::fromFile($tempPath);
-                $source->toFile($tempPath);
+                try {
+                    $source = Source::fromFile($tempPath);
+                    $source->toFile($tempPath);
+                } catch (\Exception $ex) {
+                    // Log errors without breaking the resizing process
+                    Log::error($ex);
+                }
             }, -9999);
         }
     }
