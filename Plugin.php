@@ -39,13 +39,18 @@ class Plugin extends PluginBase
             Tinify::setKey($apiKey);
 
             // Process as late in the filter collection as possible to optimize the finished product
-            Event::listen('system.resizer.afterResize', function ($resizer, $tempPath, $sourceDisk, $sourcePath) {
-                try {
-                    $source = Source::fromFile($tempPath);
-                    $source->toFile($tempPath);
-                } catch (\Exception $ex) {
-                    // Log errors without breaking the resizing process
-                    Log::info("TinyPNG failed to process $sourcePath. Error: " . $ex->getMessage());
+            Event::listen('system.resizer.afterResize', function ($resizer, $tempPath) {
+                $supportedExtensions = ['jpg', 'jpeg', 'png'];
+                if (in_array(pathinfo($tempPath, PATHINFO_EXTENSION), $supportedExtensions)) {
+                    try {
+                        $source = Source::fromFile($tempPath);
+                        $source->toFile($tempPath);
+                    } catch (\Exception $ex) {
+                        $sourcePath = $resizer->getConfig()['image']['path'];
+
+                        // Log errors without breaking the resizing process
+                        Log::info("TinyPNG failed to process $sourcePath. Error: " . $ex->getMessage());
+                    }
                 }
             }, -9999);
         }
