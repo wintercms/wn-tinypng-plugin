@@ -46,10 +46,11 @@ class Plugin extends PluginBase
                         $source = Source::fromFile($tempPath);
                         $source->toFile($tempPath);
                     } catch (\Exception $ex) {
+                        $resizedImage = $resizer->getResizedUrl();
                         $sourcePath = $resizer->getConfig()['image']['path'];
 
                         // Log errors without breaking the resizing process
-                        Log::info("TinyPNG failed to process $sourcePath. Error: " . $ex->getMessage());
+                        Log::info("TinyPNG failed to process $resizedImage (originally: $sourcePath). Error: " . $ex->getMessage());
                     }
                 }
             }, -9999);

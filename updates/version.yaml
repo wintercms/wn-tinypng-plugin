@@ -2,3 +2,4 @@
 1.0.2: Log errors silently instead of breaking the resizing process when an API error occurs with TinyPNG
 1.0.3: Improve error logging to log the source image that failed to be processed by the API.
 1.0.4: Don't attempt to process unsupported image types.
+1.0.5: Include the link to the actual image that was submitted to TinyPNG in the error log
