@@ -1,4 +1,4 @@
-<?php namespace LukeTowers\TinyPNG;
+<?php namespace Winter\TinyPNG;
 
 use Log;
 use Event;
@@ -23,7 +23,7 @@ class Plugin extends PluginBase
         return [
             'name'        => 'TinyPNG',
             'description' => 'Automatically optimize resized images with TinyPNG',
-            'author'      => 'Luke Towers',
+            'author'      => 'Winter CMS',
             'icon'        => 'icon-bolt'
         ];
     }
@@ -35,7 +35,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        if ($apiKey = Config::get('luketowers.tinypng::apiKey')) {
+        if ($apiKey = Config::get('winter.tinypng::apiKey')) {
             Tinify::setKey($apiKey);
 
             // Process as late in the filter collection as possible to optimize the finished product

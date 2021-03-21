@@ -1,18 +1,32 @@
 {
-    "name": "luketowers/oc-tinypng-plugin",
-    "type": "october-plugin",
-    "description": "Automatically optimize resized images in October CMS with TinyPNG",
-    "homepage": "https://github.com/LukeTowers/oc-tinypng-plugin",
-    "keywords": ["october", "octobercms", "laravel", "tinypng", "tinyjpg", "image optimization"],
+    "name": "winter/wn-tinypng-plugin",
+    "type": "winter-plugin",
+    "description": "Automatically optimize resized images in Winter CMS with TinyPNG",
+    "homepage": "https://github.com/wintercms/wn-tinypng-plugin",
+    "keywords": ["winter", "wintercms", "laravel", "tinypng", "tinyjpg", "image optimization"],
     "license": "MIT",
     "authors": [
         {
             "name": "Luke Towers",
-            "email": "octobercms@luketowers.ca"
+            "email": "wintercms@luketowers.ca"
+        },
+        {
+            "name": "Winter CMS Maintainers",
+            "homepage": "https://wintercms.com",
+            "role": "Maintainer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/wintercms/wn-test-plugin/issues",
+        "discord": "https://discord.gg/D5MFSPH6Ux",
+        "source": "https://github.com/wintercms/wn-test-plugin"
+    },
     "require": {
+        "php": ">=7.2",
         "composer/installers": "~1.0",
         "tinify/tinify": "^1.5"
+    },
+    "extra": {
+        "installer-name": "tinypng"
     }
 }
