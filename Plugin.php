@@ -24,7 +24,8 @@ class Plugin extends PluginBase
             'name'        => 'TinyPNG',
             'description' => 'Automatically optimize resized images with TinyPNG',
             'author'      => 'Winter CMS',
-            'icon'        => 'icon-bolt'
+            'icon'        => 'icon-bolt',
+            'replaces'    => ['LukeTowers.TinyPNG' => '<=1.0.5'],
         ];
     }
 
