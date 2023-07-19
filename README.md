@@ -6,7 +6,7 @@ Automatically optimizes resized images with TinyPNG.
 
 If you are using the [`.env` file](https://wintercms.com/docs/setup/configuration#dotenv-configuration) for configuration, simply add your [TinyPNG API Key](https://tinypng.com/dashboard/api) to the environment file as `TINYPNG_API_KEY`. If you are not using the `.env` file, simply copy `plugins/winter/tinypng/config/config.php` to `config/winter/tinypng/config.php` and change the value of `apiKey`.
 
-That's it! This plugin will then start automatically optimizing images resized with the `| resize()` filter provided by the October CMS core.
+That's it! This plugin will then start automatically optimizing images resized with the `| resize()` filter provided by the Winter CMS core.
 
 >**NOTE:** This plugin will not cause existing resized images to be regenerated. If you would like to regenerate existing images then delete the existing generated images and the resizer will automatically regenerate them for you.
 
