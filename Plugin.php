@@ -1,5 +1,6 @@
 <?php namespace Winter\TinyPNG;
 
+use App;
 use Log;
 use Event;
 use Config;
@@ -36,6 +37,9 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        // only tinify if app is in production
+        if (!App::isProduction()) return;
+        
         if ($apiKey = Config::get('winter.tinypng::apiKey')) {
             Tinify::setKey($apiKey);
 
